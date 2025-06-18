@@ -85,6 +85,13 @@
     yad
     yt-dlp
 
+	#aplications
+	discord
+	spotify
+
+	#neovim
+	neovim
+
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ]) ++ [
