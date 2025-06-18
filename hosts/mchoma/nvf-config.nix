@@ -1,6 +1,4 @@
 {
-  description = "Minimal Neovim config with LSP and Treesitter using NVF";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
