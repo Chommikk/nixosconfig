@@ -51,25 +51,25 @@
 
     ## BOOT LOADERS: NOTE USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
+    #loader.systemd-boot.enable = true;
   
-    loader.efi = {
+   # loader.efi = {
 	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
-	    canTouchEfiVariables = true;
-  	  };
+	   # canTouchEfiVariables = true;
+  	  #};
 
     loader.timeout = 5;    
   			
-    # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #  memtest86.enable = true;
-	    #  extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #  configurationName = "${host}";
-  	  #	 };
+     Bootloader GRUB
+    loader.grub = {
+	    enable = true;
+	      devices = [ "nodev" ];
+	      efiSupport = true;
+        gfxmodeBios = "auto";
+	      memtest86.enable = true;
+	      extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
+	      configurationName = "${host}";
+  	  	 };
 
     # Bootloader GRUB theme, configure below
 

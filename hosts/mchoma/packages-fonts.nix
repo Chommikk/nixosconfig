@@ -96,10 +96,11 @@
 	#aplications
 	discord
 	spotify
-    steam
+
 
 	#neovim
 	neovim
+    clang-tools
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
@@ -166,12 +167,12 @@ fonts = {
 	
     virt-manager.enable = false;
     
-    #steam = {
-    #  enable = true;
-    #  gamescopeSession.enable = true;
-    #  remotePlay.openFirewall = true;
-    #  dedicatedServer.openFirewall = true;
-    #};
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
     
     xwayland.enable = true;
 
