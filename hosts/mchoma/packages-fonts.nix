@@ -23,9 +23,11 @@
     clang
     curl
     cpufrequtils
+    google-chrome
     duf
     findutils
     ffmpeg   
+    pkgs.efibootmgr
     glib #for gsettings to work
     gsettings-qt
     git
@@ -38,6 +40,11 @@
     wget
     xdg-user-dirs
     xdg-utils
+
+    #c Stuff
+    valgrind
+    gnumake
+
 
     fastfetch
     (mpv.override {scripts = [mpvScripts.mpris];}) # with tray

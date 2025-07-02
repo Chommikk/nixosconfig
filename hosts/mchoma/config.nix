@@ -52,28 +52,40 @@
 
     ## BOOT LOADERS: NOTE USE ONLY 1. either systemd or grub  
     # Bootloader SystemD
-    loader.systemd-boot.enable = true;
+    #loader.systemd-boot.enable = true;
   
-    loader.efi = {
+    #loader.efi = {
 	    #efiSysMountPoint = "/efi"; #this is if you have separate /efi partition
-	    canTouchEfiVariables = true;
-  	  };
+	#    canTouchEfiVariables = true;
+  	#  };
 
-    loader.timeout = 5;    
-  			
+    #loader.timeout = 5;    
     # Bootloader GRUB
-    #loader.grub = {
-	    #enable = true;
-	    #  devices = [ "nodev" ];
-	    #  efiSupport = true;
-      #  gfxmodeBios = "auto";
-	    #  memtest86.enable = true;
-	    #  extraGrubInstallArgs = [ "--bootloader-id=${host}" ];
-	    #  configurationName = "${host}";
-  	  #	 };
-
+    loader.grub = {
+        enable = true;
+    devices = [ "nodev" ];
+    efiSupport = true;
+    useOSProber = true;
+    gfxmodeBios = "auto";
+    memtest86.enable = true;
+    extraGrubInstallArgs = [ "--bootloader-id=${host}" "--removable" ];  # Add --removable
+    configurationName = "${host}";
+    default = "saved";  # Remember last choice
+    extraConfig = ''
+        GRUB_SAVEDEFAULT=true
+        GRUB_DISABLE_OS_PROBER=false
+        '';
+    };
     # Bootloader GRUB theme, configure below
-
+    systemd.services.fix-boot-order = {
+        description = "Fix EFI boot order";
+        wantedBy = [ "multi-user.target" ];
+        after = [ "multi-user.target" ];
+        serviceConfig = {
+            Type = "oneshot";
+            ExecStart = "${pkgs.efibootmgr}/bin/efibootmgr -o $(${pkgs.efibootmgr}/bin/efibootmgr | grep '${host}' | cut -c5-8),$(${pkgs.efibootmgr}/bin/efibootmgr | grep -v '${host}' | grep 'Boot[0-9]' | cut -c5-8 | tr '\n' ',' | sed 's/,$//')";
+        };
+    };
     ## -end of BOOTLOADERS----- ##
   
     # Make /tmp a tmpfs
