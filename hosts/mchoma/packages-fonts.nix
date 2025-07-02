@@ -38,6 +38,7 @@
     pciutils
     vim
     wget
+    htop
     xdg-user-dirs
     xdg-utils
 
@@ -95,6 +96,7 @@
 	#aplications
 	discord
 	spotify
+    steam
 
 	#neovim
 	neovim
