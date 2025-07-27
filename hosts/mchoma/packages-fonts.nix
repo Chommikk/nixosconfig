@@ -8,6 +8,7 @@
       with ps; [
         requests
         pyquery # needed for hyprland-dots Weather script
+        python-lsp-server
         ]
     );
 
@@ -101,6 +102,7 @@
 	#neovim
 	neovim
     clang-tools
+    ripgrep
 
     #waybar  # if wanted experimental next line
     #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
