@@ -16,6 +16,7 @@
 
   nixpkgs.config.allowUnfree = true;
   
+
   environment.systemPackages = (with pkgs; [
   # System Packages
     bc
@@ -46,6 +47,17 @@
     #c Stuff
     valgrind
     gnumake
+
+    #vcli
+    python311Full
+    python311Packages.selenium
+    python311Packages.pip
+    python311Packages.python-dotenv
+    python311Packages.pillow
+    python311Packages.numpy
+    python311Packages.bitarray
+    chromedriver
+    chromium
 
 
     fastfetch
@@ -98,6 +110,8 @@
 	discord
 	spotify
 
+    #programing tools
+    docker
 
 	#neovim
 	neovim
