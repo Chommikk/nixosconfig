@@ -47,6 +47,7 @@
     #c Stuff
     valgrind
     gnumake
+    norminette
 
     #vcli
     python311Full
