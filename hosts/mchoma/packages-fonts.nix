@@ -49,7 +49,7 @@
     gnumake
     norminette
     #browser
-    nixos.qutebrowser
+    qutebrowser
     #keyboard
     xkeyboard_config
 
