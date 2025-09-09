@@ -48,7 +48,17 @@
     valgrind
     gnumake
     norminette
+    #browser
+    nixos.qutebrowser
+    #keyboard
+    xkeyboard_config
 
+    #minecraft
+    jdk17
+
+    #kde packages
+    kdePackages.kdeconnect-kde
+    
     #vcli
     python311Full
     python311Packages.selenium

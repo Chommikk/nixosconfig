@@ -8,6 +8,14 @@
 
   # Hyprland Settings
   extraMonitorSettings = "";
+#
+#   services.xserver = {
+#    enable = true;
+    # layout = "us, sk";  # Example: US and Russian
+    # xkbOptions = "grp:alt_shift_toggle"; # Switch with Alt+Shift
+  # };
+
+  # For console (optional)
 
   # Waybar Settings
   clock24h = true;
